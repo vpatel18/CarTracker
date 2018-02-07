@@ -1,0 +1,27 @@
+<hr>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Vin</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Red line Rpm</th>
+      <th>Max Fuel Volume</th>
+      <th>Last Service Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let vehicle of vehicles">
+      <td>{{vehicle.vin}}</td>
+      <td>{{vehicle.make}}</td>
+      <td>{{vehicle.model}}</td>
+      <td>{{vehicle.year}}</td>
+      <td>{{vehicle.redlineRpm}}</td>
+      <td>{{vehicle.maxFuelVolume}}</td>
+      <td>{{vehicle.lastServiceDate | date:'medium'}}</td>
+    </tr>
+  </tbody>
+</table>
+

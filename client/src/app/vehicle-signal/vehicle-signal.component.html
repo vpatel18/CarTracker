@@ -1,0 +1,75 @@
+
+<div class="row">
+  <div class="col-lg-6">
+  </div>
+</div>
+
+<div class ="map">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <input type="text"  [(ngModel)]="track" class="form-control" placeholder="Enter VIN number">
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div>
+  <div class="btn btn-secondary my-2 my-sm-0">
+    <label>Property</label>
+      <select [(ngModel)]="prop">
+        <option value="speed">Speed</option>
+        <option value="fuelVolume">FuelVolume</option>
+        <option Value="engineHp">EnginHp</option>
+        <option Value="engineRpm">EngineRpm</option>
+      </select>
+
+  </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input class="form-control" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" [(ngModel)]="time" placeholder="Enter Time">
+          <owl-date-time #dt1></owl-date-time>
+        </div>
+      </div>
+    </div>
+  <div>
+
+  </div>
+</div>
+
+<hr>
+<!--<table id = "table_id" class="table table-hover">-->
+  <!--<thead>-->
+  <!--<tr>-->
+    <!--<th scope="col">Vin</th>-->
+    <!--<th scope="col">Timestamp</th>-->
+    <!--<th scope="col">{{prop.toUpperCase()}}</th>-->
+  <!--</tr>-->
+  <!--</thead>-->
+  <!--<tbody>-->
+  <!--<tr class="table-active" *ngFor="let vehicledata of vehiclesdata | signal: vin_num : prop: time "  >-->
+    <!--<td>{{vehicledata.vin}}</td>-->
+    <!--<td>{{vehicledata.timestamp | date:'medium'}}</td>-->
+
+    <!--<td>{{vehicledata[prop]}}</td>-->
+  <!--</tr>-->
+  <!--<button class="btn btn-secondary my-2 my-sm-0" (click)="randomize()">Plot Chart</button>-->
+  <!--</tbody>-->
+<!--</table>-->
+
+<button class="btn btn-secondary my-2 my-sm-0" (click)="chartPlot()">Plot Chart</button>
+
+<div class="row">
+  <div class="col-xs-9 col-md-7">
+    <div style="display: block;">
+      <canvas baseChart width="400" height="400"
+              [datasets]="datasets"
+              [labels]="labels"
+              [options]="options"
+              [colors]="Colors"
+              [chartType]="'line'">
+      </canvas>
+    </div>
+  </div>
+</div>

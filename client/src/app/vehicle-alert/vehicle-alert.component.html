@@ -1,0 +1,29 @@
+
+<div class="row">
+  <div class="col-lg-6">
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text"  [(ngModel)]="track" class="form-control" placeholder="Enter VIN number">
+    </div>
+  </div>
+</div>
+
+<table class="table table-striped" >
+  <thead class="thead-dark">
+  <tr>
+    <th>Vin</th>
+    <th>Timestamp</th>
+    <th>Priority</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor= "let vehicledata of vehiclesdata | alert : track">
+    <td>{{vehicledata.vin}}</td>
+    <td>{{vehicledata.timestamp | date:'medium'}}</td>
+    <td>{{vehicledata.priority}}</td>
+  </tr>
+  </tbody>
+</table>

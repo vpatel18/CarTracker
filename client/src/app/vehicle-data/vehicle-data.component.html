@@ -1,0 +1,52 @@
+
+  <div class="row">
+  <div class="col-lg-6">
+    <h3 class="navbar-text">Priotize Your Vehicle</h3>
+  </div>
+  </div>
+
+ <div class ="map">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <input type="text"  [(ngModel)]="term" class="form-control" placeholder="Enter Priority">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </div>
+    </div>
+  </div>
+ </div>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Vin</th>
+    <th scope="col">Longitude</th>
+    <th scope="col">Timestamp</th>
+    <th scope="col">Speed</th>
+    <th scope="col">Engine RPM</th>
+    <th scope="col">FuelVolume</th>
+    <th scope="col">Priority</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="table-active" *ngFor="let vehicledata of vehiclesdata | filter:term | sorting | orderBy: order :'reverse' ">
+    <td>{{vehicledata.vin}}</td>
+    <td>{{vehicledata.latitude}}</td>
+    <td>{{vehicledata.longitude}}</td>
+    <td>{{vehicledata.timestamp | date:'medium'}}</td>
+    <!--<td>{{vehicledata.fuelVolume}}</td>-->
+    <td>{{vehicledata.speed}}</td>
+    <td>{{vehicledata.engineHp}}</td>
+    <!--<td>{{vehicledata.checkEngineLightOn}}</td>-->
+    <!--<td>{{vehicledata.engineCoolantLow}}</td>-->
+    <!--<td>{{vehicledata.cruiseControlOn}}</td>-->
+    <td>{{vehicledata.engineRpm}}</td>
+    <td>{{vehicledata.priority}}</td>
+    <!--<td>{{vehicledata.tires.frontLeft}}</td>-->
+    <!--<td>{{vehicledata.tires.frontRight}}</td>-->
+    <!--<td>{{vehicledata.tires.rearLeft}}</td>-->
+    <!--<td>{{vehicledata.tires.rearRight}}</td>-->
+  </tr>
+  </tbody>
+</table>
+
